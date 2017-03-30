@@ -1,13 +1,21 @@
 /**
  * Created by elzeppa on 3/29/17.
  */
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className="container">
-            Ini cobaan
+          Home {JSON.stringify(props.keyword)}
         </div>
     )
 }
 
-export default Home
+const mapStateToProp = (state) => {
+  return {
+    keyword: state
+  }
+}
+
+export default connect(mapStateToProp, null)(Home)

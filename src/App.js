@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
 import {
     BrowserRouter as Router,
     Route,
@@ -7,20 +6,22 @@ import {
 import Home from './components/Home'
 import Products from './components/products/Products'
 import AppHeader from './components/Header'
+import './App.css';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppHeader/>
-        <Router history={window.history}>
-            <div className="row">
-                <Route exact path="/" component={Home}/>
-                <Route path="/products" component={Products}/>
+        <Router>
+            <div>
+              <AppHeader/>
+              <Route exact path="/" component={Home}/>
+              <Route path="/products" component={Products}/>
             </div>
         </Router>
       </div>
-    );
+    )
   }
 }
 
